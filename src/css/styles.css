@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+html {
+  font-family: "Source Sans Pro", sans-serif;
+}
+body {
+  background: #03a9f4;
+  margin: 0;
+}
+
+h1,
+h3,
+p {
+  color: #03a9f4;
+}
+
+input {
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+button {
+  outline: none;
+}
+
+span{
+    color:white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.header {
+  width: 100vw;
+  height: 70px;
+}
+
+.brand {
+  font-size: 36px;
+  color: #03a9f4;
+  padding: 16px;
+  background: white;
+  width: auto;
+}
+
+.heading {
+  color: white;
+}
+
+.list {
+  border-radius: 10px;
+  box-shadow: 10px 10px 44px 8px rgba(0, 0, 0, 0.46);
+  margin: 8px;
+  padding: 8px;
+  background: #dfe1e6;
+  height: 65vh;
+  overflow: scroll;
+  animation: slide-up 0.3s ease;
+}
+
+.card {
+  padding: 8px;
+  margin: 8px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 22px 8px rgba(0, 0, 0, 0.46);
+  animation: slide-up 0.3s ease;
+}
+
+.canvas {
+  width: 100vw;
+  height: 100vh;
+  padding: 16px;
+}
+
+.button-bg {
+  color: white;
+  background-color: transparent;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 2px solid white;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-fg {
+  color: #03a9f4;
+  background-color: transparent;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 2px solid #03a9f4;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-bg:hover {
+  color: #03a9f4;
+  background-color: white;
+}
+
+.button-fg:hover {
+  color: white;
+  background-color: #03a9f4;
+}
+
+.position-br {
+  position: initial;
+  bottom: 8px;
+  right: 8px;
+}
+
+.position-tr {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.row {
+  display: block;
+  position: relative;
+}
+
+.col {
+  width: 20%;
+  float: left;
+}
+
+#delete {
+  color: red !important;
+  text-decoration: none;
+  animation: slide-down 0.3s ease;
+}
+
+/* Animations */
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(20px);
+    }
+  }

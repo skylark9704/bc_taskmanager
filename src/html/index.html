@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <script src="../js/List.js"></script>
+    <script src="../js/Task.js"></script>
+    <script src="../js/index.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="brand"><b>Task</b> Manager</div>
+    </div>
+    <div class="canvas">
+      <h1 class="heading">Your Tasks</h1>
+      <hr />
+      <div class="container-fluid" style="padding: 32px;margin: 0 auto">
+        <div class="row">
+          <div class="col-12">
+            <input
+              type="text"
+              name="listTitle"
+              id="listTitle"
+              placeholder="List Title"
+            />
+            <button class="button-bg" onclick="createNewList()">
+              Add List
+            </button>
+
+            <span> (Right Click on List to Delete) </span>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid" style="padding: 32px;margin: 0 auto">
+        <div id="list-container" class="row align-self-center">
+          <!-- LISTS RENDERED INSIDE THIS DIV-->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
