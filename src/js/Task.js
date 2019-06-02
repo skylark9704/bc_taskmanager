@@ -5,21 +5,22 @@ class Task {
     this.description = description;
   }
 
-  // CREATE TASK IN LIST
-  create(listId) {
-    // PARAMS = [{VALUE : ELEMENT_ID , TYPE : STRING}]
+  getTask(){
+    return this;
+  }
 
-    // GET SELECTED LIST
+  // create task in list,  params = [element_id: String]
+  create(listId) {
+    // get selected list
     var list = document.getElementById(listId);
 
-    // CREATE DIV FOR RENDERING TASK , ADD DRAG AND CLASS ATTRIBUTES
+    //create div for rendering task , add drag and class attributes
     var div = document.createElement("div");
     div.setAttribute("id", this.id);
     div.setAttribute("draggable", "true");
     div.setAttribute("ondragstart", "drag(event)");
     div.setAttribute("class", "card");
     div.onmouseenter = () => {
-      console.log("Mouse Over");
       var del = document.createElement("a");
       del.textContent = "Delete";
       del.setAttribute("id", "delete");
@@ -31,12 +32,11 @@ class Task {
     };
 
     div.onmouseleave = () => {
-      console.log("Mouse Leave");
       var del = document.getElementById("delete");
       div.removeChild(del);
     };
 
-    // CREATE AND SET TEXT FOR TASK AND DESCRIPTION
+    // create and set task and desciption
     var task = document.createElement("h3");
     task.setAttribute("spellcheck", "false");
     task.textContent = this.task;
@@ -44,11 +44,13 @@ class Task {
     description.setAttribute("spellcheck", "false");
     description.textContent = this.description;
 
-    // SET ATTRIBUTE TO MAKE EDITABLE
+    // set attributes to make editable elements
     task.setAttribute("contenteditable", "true");
+    task.setAttribute("onclick","document.execCommand('selectAll',false,null)")
     description.setAttribute("contenteditable", "true");
+    description.setAttribute("onclick","document.execCommand('selectAll',false,null)")
 
-    // ADD LISTENER TO CAPTURE CHANGES
+    //add listeners to capture changes
     task.addEventListener(
       "input",
       function() {
@@ -65,7 +67,7 @@ class Task {
       false
     );
 
-    // ADD ELEMENTS TO DOM
+    // add elements to dom
     div.appendChild(task);
     div.appendChild(description);
     list.appendChild(div);

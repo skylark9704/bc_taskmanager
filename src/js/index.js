@@ -1,5 +1,13 @@
+var inputId = document.getElementById('listTitle');
+  inputId.addEventListener('keydown', function onEvent(event) {
+    if (event.key === "Enter") {
+        createNewList();
+        return false;
+    }
+  });
+
 function createNewTask(listId) {
-  var newTask = new Task(); // CLASS : [SRC : '../js/Task.js'], PROPS : [id:String, task:String, description:String]
+  var newTask = new Task(); // class : [src : '../js/Task.js'], props : [id:String, task:String, description:String]
   newTask.id =
     "task" +
     Math.random()
@@ -11,7 +19,7 @@ function createNewTask(listId) {
 }
 
 function createNewList() {
-  var newList = new List(); // CLASS : [SRC : '../js/List.js'], PROPS : [id:String, title:String]
+  var newList = new List(); // class : [src : '../js/List.js'], props : [id:String, title:String]
   newList.title = listTitle;
   newList.id =
     "list" +
@@ -21,18 +29,18 @@ function createNewList() {
   newList.create();
 }
 
-// ALLOW DROP ON LOCATION
+// allow drop on location
 function allowDrop(e) {
   e.preventDefault();
 }
 
-// TRANSFER DATA WHILE DRAGGING
+// transfer data while draging
 function drag(e) {
   e.dataTransfer.setData("text", e.target.id);
 }
 
 function drop(e) {
-  // CHECK IF THE DROP TARGET LOCATION
+  // check if the drop is at target location
   if (e.target.className === "col list") {
     e.preventDefault();
     var data = e.dataTransfer.getData("text");
