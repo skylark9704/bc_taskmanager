@@ -1,3 +1,4 @@
+// attach event listener to explicitly ctach keypress
 var inputId = document.getElementById('listTitle');
   inputId.addEventListener('keydown', function onEvent(event) {
     if (event.key === "Enter") {
