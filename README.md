@@ -3,12 +3,12 @@
 # How to Run (Visual Studio Code):
 
 - open the project in vscode
-- install 'Live Server Extension', locate *index.html* in *../html/*
+- install 'Live Server Extension', locate *index.html*
 - Open the .html file and press 'ALT + L, ALT + O' to run and 'ALT + L, ALT - C' to stop.
 
 # How to Run (Windows)
 
-- Locate *index.html* in *../html/*
+- Locate *index.html*
 - right-click on file and open with chrome/edge/mozilla/safari
 
 # Help
