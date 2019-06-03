@@ -33,8 +33,10 @@ class Task {
     };
 
     del.onclick = () => {
-      var d = document.getElementById(this.id);
-      list.removeChild(d);
+      //var d = document.getElementById(this.id);
+      //list.removeChild(d);
+      var x = document.getElementById("delete").parentNode;
+      x.parentNode.removeChild(x);
     };
 
     // create and set task and desciption

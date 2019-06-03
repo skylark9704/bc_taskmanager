@@ -28,7 +28,10 @@ class List {
       list.setAttribute("ondragover", "allowDrop(event)");
       list.addEventListener('contextmenu', function(ev) {
         ev.preventDefault();
-        listContainer.removeChild(list)
+        var con = confirm("This will delete the list and items in it. Are you sure?")
+        if(con == true){
+          listContainer.removeChild(list)
+        }
         return false;
     }, false);
 
