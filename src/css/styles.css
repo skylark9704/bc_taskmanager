@@ -91,6 +91,7 @@ span{
   border-radius: 5px;
   border: 2px solid #03a9f4;
   transition: all 0.2s ease-in-out;
+  margin-bottom: 4px;
 }
 
 .button-bg:hover {
@@ -128,7 +129,10 @@ span{
 #delete {
   color: red !important;
   text-decoration: none;
-  animation: slide-down 0.3s ease;
+  animation: slide-up 0.3s ease;
+  display: none;
+  float: right;
+  margin: 4px;
 }
 
 /* Animations */

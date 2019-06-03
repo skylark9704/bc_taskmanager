@@ -20,20 +20,21 @@ class Task {
     div.setAttribute("draggable", "true");
     div.setAttribute("ondragstart", "drag(event)");
     div.setAttribute("class", "card");
+    var del = document.createElement("a");
+    del.textContent = "Delete";
+    del.setAttribute("id", "delete");
+    div.appendChild(del);
     div.onmouseenter = () => {
-      var del = document.createElement("a");
-      del.textContent = "Delete";
-      del.setAttribute("id", "delete");
-      div.appendChild(del);
-      del.onclick = () => {
-        var d = document.getElementById(this.id);
-        list.removeChild(d);
-      };
+      del.style.display = "block"
     };
 
     div.onmouseleave = () => {
-      var del = document.getElementById("delete");
-      div.removeChild(del);
+      del.style.display = "none"
+    };
+
+    del.onclick = () => {
+      var d = document.getElementById(this.id);
+      list.removeChild(d);
     };
 
     // create and set task and desciption
