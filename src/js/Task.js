@@ -22,7 +22,11 @@ class Task {
     div.setAttribute("class", "card");
     var del = document.createElement("a");
     del.textContent = "Delete";
-    del.setAttribute("id", "delete");
+    var delId = "delete"+Math.random()
+    .toString(36)
+    .substring(7);
+    del.setAttribute("id", delId);
+    del.setAttribute("class","delete")
     div.appendChild(del);
     div.onmouseenter = () => {
       del.style.display = "block"
@@ -35,7 +39,7 @@ class Task {
     del.onclick = () => {
       //var d = document.getElementById(this.id);
       //list.removeChild(d);
-      var x = document.getElementById("delete").parentNode;
+      var x = document.getElementById(delId).parentNode;
       x.parentNode.removeChild(x);
     };
 

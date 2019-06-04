@@ -126,7 +126,7 @@ span{
   float: left;
 }
 
-#delete {
+.delete {
   color: red !important;
   text-decoration: none;
   animation: slide-up 0.3s ease;
