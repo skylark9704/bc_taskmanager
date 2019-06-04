@@ -54,24 +54,24 @@ class Task {
     // set attributes to make editable elements
     task.setAttribute("contenteditable", "true");
     task.setAttribute("onfocusin","document.execCommand('selectAll',false,null)")
-    task.setAttribute("onclick","document.execCommand('selectAll',false,null)")
+    task.setAttribute("onmouseup","document.execCommand('selectAll',false,null)")
     description.setAttribute("contenteditable", "true");
     description.setAttribute("onfocusin","document.execCommand('selectAll',false,null)")
-    description.setAttribute("onclick","document.execCommand('selectAll',false,null)")
+    description.setAttribute("onmouseup","document.execCommand('selectAll',false,null)")
 
     //add listeners to capture changes
     task.addEventListener(
-      "input",
+      "blur",
       function() {
-        console.log("TASK EVENT FIRED");
+        console.log(this.id+": TASK :"+task.textContent);
       },
       false
     );
 
     description.addEventListener(
-      "input",
+      "blur",
       function() {
-        console.log("DESCRIPTION EVENT FIRED");
+        console.log(this.id+": DESC :"+description.textContent);
       },
       false
     );
